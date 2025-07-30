@@ -20,43 +20,6 @@
 };
 
 / {
-    behaviors {
-        tap_dance_H: tap_dance_H {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_H";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT>, <&kp HOME>;
-
-            tapping-term-ms = <110>;
-        };
-
-        tap_dance_J: tap_dance_J {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_J";
-            #binding-cells = <0>;
-            tapping-term-ms = <110>;
-            bindings = <&kp DOWN_ARROW>, <&kp PAGE_DOWN>;
-        };
-
-        tap_dance_K: tap_dance_K {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_K";
-            #binding-cells = <0>;
-            bindings = <&kp UP_ARROW>, <&kp PAGE_UP>;
-
-            tapping-term-ms = <110>;
-        };
-
-        tap_dance_L: tap_dance_L {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_L";
-            #binding-cells = <0>;
-            bindings = <&kp RIGHT_ARROW>, <&kp END>;
-
-            tapping-term-ms = <110>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -90,9 +53,9 @@
             bindings = <
 &trans  &trans        &trans        &trans            &trans        &trans                          &trans        &trans        &trans        &trans        &trans         &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4  &kp NUMBER_5                    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0   &kp RIGHT_BRACKET
-&trans  &trans        &kp C_MUTE    &kp C_VOL_DN      &kp C_VOL_UP  &trans                          &tap_dance_H  &tap_dance_J  &tap_dance_K  &tap_dance_L  &trans         &kp GRAVE
+&trans  &trans        &kp C_MUTE    &kp C_VOL_DN      &kp C_VOL_UP  &trans                          &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans         &kp GRAVE
 &trans  &trans        &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans        &trans    &trans  &trans        &trans        &trans        &trans        &kp BACKSLASH  &mt RIGHT_SHIFT EQUAL
-                                    &trans            &trans        &trans        &trans    &trans  &kp LEFT_ALT  &trans        &trans
+                                    &trans            &trans        &trans        &trans    &trans  &mo 3         &trans        &trans
             >;
         };
 
@@ -110,7 +73,17 @@
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
 &trans  &trans        &trans        &trans        &trans        &trans                          &trans        &trans        &trans        &trans        &trans        &trans
 &trans  &trans        &trans        &trans        &trans        &trans        &trans    &trans  &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-                                    &trans        &trans        &kp LEFT_ALT  &trans    &trans  &trans        &trans        &trans
+                                    &trans        &trans        &mo 3         &trans    &trans  &trans        &trans        &trans
+            >;
+        };
+
+        combo_layer {
+            bindings = <
+&trans  &trans            &trans            &trans            &trans            &trans                              &trans            &trans            &trans            &trans            &trans            &trans
+&trans  &kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kp LA(NUMBER_4)  &kp LA(NUMBER_5)                    &kp LA(NUMBER_6)  &kp LA(NUMBER_7)  &kp LA(NUMBER_8)  &kp LA(NUMBER_9)  &kp LA(NUMBER_0)  &trans
+&trans  &trans            &trans            &trans            &trans            &trans                              &kp HOME          &kp PG_DN         &kp PG_UP         &kp END           &trans            &trans
+&trans  &trans            &trans            &trans            &trans            &trans            &trans    &trans  &trans            &trans            &trans            &trans            &trans            &trans
+                                            &trans            &trans            &trans            &trans    &trans  &trans            &trans            &trans
             >;
         };
     };
