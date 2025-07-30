@@ -27,14 +27,14 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT>, <&kp HOME>;
 
-            tapping-term-ms = <120>;
+            tapping-term-ms = <110>;
         };
 
         tap_dance_J: tap_dance_J {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_J";
             #binding-cells = <0>;
-            tapping-term-ms = <120>;
+            tapping-term-ms = <110>;
             bindings = <&kp DOWN_ARROW>, <&kp PAGE_DOWN>;
         };
 
@@ -44,7 +44,7 @@
             #binding-cells = <0>;
             bindings = <&kp UP_ARROW>, <&kp PAGE_UP>;
 
-            tapping-term-ms = <120>;
+            tapping-term-ms = <110>;
         };
 
         tap_dance_L: tap_dance_L {
@@ -53,7 +53,7 @@
             #binding-cells = <0>;
             bindings = <&kp RIGHT_ARROW>, <&kp END>;
 
-            tapping-term-ms = <120>;
+            tapping-term-ms = <110>;
         };
     };
 
